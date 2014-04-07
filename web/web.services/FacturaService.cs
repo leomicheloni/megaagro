@@ -11,6 +11,11 @@ namespace web.services
     {
         private IDataAccess dataAccess;
 
+        public static FacturaService Build()
+        {
+            return new FacturaService(new MockedDataAccess());
+        }
+
         public FacturaService(IDataAccess dataAccess)
         {
             this.dataAccess = dataAccess;

@@ -17,7 +17,7 @@ namespace web.model
         public class Detalle
         {
             public int Id { get; set; }
-            public Repuesto MyProperty { get; set; }
+            public Repuesto Respuesto { get; set; }
             public int Cantidad { get; set; }
             public string Importe { get; set; }
         }

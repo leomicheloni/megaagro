@@ -41,7 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IDataAccess.cs" />
+    <Compile Include="MockedDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\web.model\web.model.csproj">
+      <Project>{E0DBB9C8-2EB8-4707-8850-741BEFA9A7BE}</Project>
+      <Name>web.model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
