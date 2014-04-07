@@ -217,6 +217,16 @@
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\web.model\web.model.csproj">
+      <Project>{E0DBB9C8-2EB8-4707-8850-741BEFA9A7BE}</Project>
+      <Name>web.model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\web.services\web.services.csproj">
+      <Project>{3C197C70-D0BE-456A-9B93-E50C8D1DE56D}</Project>
+      <Name>web.services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
