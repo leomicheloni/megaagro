@@ -8,13 +8,42 @@ namespace web.data
 {
     public class MockedDataAccess: IDataAccess
     {
-        public IQueryable<Factura> Get()
+        //public IQueryable<Factura> Get()
+        //{
+        //    return (new[]
+        //    {
+        //        new Factura { Id = 1, NroFactura = 1, Fecha = "2014-04-04", Usuario = 
+        //            this.GetMockedUser(), Detalle = this.BuildDetails(2)}
+        //    }).AsQueryable();
+        //}
+
+        private IEnumerable<Repuesto> BuildRepuestos(int cantidad)
         {
-            return (new[]
+            var repuestos = new List<Repuesto>();
+
+            for (var i = 0; i < cantidad; i++)
             {
-                new Factura { Id = 1, NroFactura = 1, Fecha = "2014-04-04", Usuario = 
-                    this.GetMockedUser(), Detalle = this.BuildDetails(2)}
-            }).AsQueryable();
+
+                var repuesto = new Repuesto();
+                repuesto.Activo = true;
+                repuesto.Caracteristicas = "carateristica ";
+                repuesto.Maquinaria = "maquinaria ";
+                repuesto.PrecioCompra = "100";
+                repuesto.PrecioVenta = "120";
+                repuesto.Proveedor = new Proveedor
+                    {
+                        Activo = true,
+                        Direccion = "calle 1 123",
+                        FechaIngreso = "2010-01-23",
+                        Nombre = "Proveedor 1",
+                        Telefonos = new[] { "12232323", "3434343", "23423432" }
+                    };
+                repuesto.StockFisico = 30;
+
+                repuestos.Add(repuesto);
+            }
+
+            return repuestos;
         }
 
         private IEnumerable<Compra.Detalle> BuildDetails(int cantidad)
@@ -43,7 +72,13 @@ namespace web.data
 
         public IQueryable<T> Get<T>()
         {
-            throw new NotImplementedException();
+
+            return null;
+        }
+
+        public IQueryable<Repuesto> Get()
+        {
+            return this.BuildRepuestos(10).AsQueryable<Repuesto>();
         }
     }
 }

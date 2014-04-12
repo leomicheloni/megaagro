@@ -8,11 +8,13 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Bienvenido</title>
+    <link href="@Url.Content("css/style.css")" type="text/css" rel="Stylesheet" />
 </head>
 <body>
-    <div>
-        <input type="text" name="userName" value="" />
-        <input type="password" name="Password" value="" />    
+    <div class="loginbox">
+      <label for="userName">Nombre</label><input type="text" name="userName" value="" />
+
+      <label for="password">Password</label><input type="password" name="password" value="" />    
         <input type="button" name="login" value="Ingresar" />
     </div>
 </body>
