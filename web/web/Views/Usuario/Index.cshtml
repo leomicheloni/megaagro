@@ -1,9 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,10 +11,13 @@
 </head>
 <body>
     <div class="loginbox">
-      <label for="userName">Nombre</label><input type="text" name="userName" value="" />
-
-      <label for="password">Password</label><input type="password" name="password" value="" />    
-        <input type="button" name="login" value="Ingresar" />
+        <form action="@Url.Action("Login", "User")" method="post">
+        <label for="userName">
+            Nombre</label><input type="text" name="userName" value="" />
+        <label for="password">
+            Password</label><input type="password" name="password" value="" />
+        <input type="submit" name="login" value="Ingresar" />
+        </form>
     </div>
 </body>
 </html>
