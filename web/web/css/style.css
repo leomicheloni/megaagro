@@ -1,7 +1,24 @@
-﻿body {
+﻿body 
+{
+    font-family: Calibri;
+    vertical-align: bottom;
 }
 
 .loginbox{
-    width: 200px;
+    width: 300px;
+    margin: auto;
 }
 
+.loginbox label{
+    float: left;
+    width: 100px;
+}
+
+.loginbox input{
+    float: right;
+    width: 150px;
+}
+
+.loginbox input[type=submit]{
+    float: left;
+}

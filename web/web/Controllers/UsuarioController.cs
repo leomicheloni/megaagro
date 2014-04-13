@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using web.Models;
+using web.services;
 
 namespace web.Controllers
 {
@@ -11,6 +12,7 @@ namespace web.Controllers
     {
         //
         // GET: /Usuario/
+        UsuarioService usuarioService = new UsuarioService();
 
         public ActionResult Index()
         {
@@ -23,8 +25,10 @@ namespace web.Controllers
         /// <returns></returns>
         public ActionResult Login(LoginUserViewModel loginUser)
         {
+            usuarioService.Login(new model.Usuario { Email = loginUser.Email, Contrasena = loginUser.Password });
             return new EmptyResult();
         }
 
-    }
+
+   }
 }
