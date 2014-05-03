@@ -9,6 +9,9 @@ namespace web.services.tests
     [TestFixture]
     public class UserServiceFixture
     {
-
+        [Test]
+        public void LoginUserOk()
+        {
+        }
     }
 }
