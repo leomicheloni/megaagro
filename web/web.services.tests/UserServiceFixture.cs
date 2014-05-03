@@ -16,20 +16,29 @@ namespace web.services.tests
         [TestFixtureSetUp]
         public void Init()
         {
-
         }
 
         [Test]
         public void LoginUserOk()
         {
             mockedDataAccess.Setup(d => d.GetUsuarios());
-
             var target = new UsuarioService(new MockedDataAccess());
-            
-            //setup            
-            var result = target.Login(new model.Usuario { Email = "juan@perez.com", Contrasena = "12345678" });
+            var result = target.Login(new model.Usuario { Email = "juan0@perez.com", Contrasena = "12345678" });
 
             Assert.IsTrue(result.Success);
         }
+
+        [Test]
+        public void LoginUserWrongPassword()
+        {
+            mockedDataAccess.Setup(d => d.GetUsuarios());
+
+            var target = new UsuarioService(new MockedDataAccess());
+            var result = target.Login(new model.Usuario { Email = "juan0@perez.com", Contrasena = "12345___" });
+
+            Assert.IsFalse(result.Success);
+            Assert.AreEqual(LoginResult.WrongPassword(), result);
+        }
+
     }
 }
