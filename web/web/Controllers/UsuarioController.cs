@@ -12,7 +12,7 @@ namespace web.Controllers
     {
         //
         // GET: /Usuario/
-        UsuarioService usuarioService = new UsuarioService();
+        UsuarioService usuarioService = UsuarioService.Build();
 
         public ActionResult Index()
         {
@@ -25,7 +25,7 @@ namespace web.Controllers
         /// <returns></returns>
         public ActionResult Login(LoginUserViewModel loginUser)
         {
-            usuarioService.Login(new model.Usuario { Email = loginUser.Email, Contrasena = loginUser.Password });
+            var loginResult = usuarioService.Login(new model.Usuario { Email = loginUser.Email, Contrasena = loginUser.Password });
             return new EmptyResult();
         }
 

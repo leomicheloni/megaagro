@@ -60,6 +60,31 @@ namespace web.data
             }
         }
 
+        private IEnumerable<Usuario> BuildUsuarios()
+        {
+            var usuarios = new List<Usuario>();
+
+            for (var i = 0; i < 10; i++)
+            {
+
+                var usuario = new Usuario
+                {
+                    Activo = true,
+                    Apellido = "perez",
+                    Contrasena = "12345678",
+                    Email = "juan" + i + "@perez.com",
+                    Id = 1,
+                    Nombre = "juan" + i,
+                    NombreUsuario = "jperez" + i,
+                    Telefonos = new List<string>()
+                };
+
+                usuarios.Add(usuario);
+            }
+
+            return usuarios;
+        }
+
         private Usuario GetMockedUser()
         {
             return new Usuario();
@@ -79,6 +104,12 @@ namespace web.data
         public IQueryable<Repuesto> Get()
         {
             return this.BuildRepuestos(10).AsQueryable<Repuesto>();
+        }
+
+
+        public IQueryable<Usuario> GetUsuarios()
+        {
+            return this.BuildUsuarios().AsQueryable();
         }
     }
 }

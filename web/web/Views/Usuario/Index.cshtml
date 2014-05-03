@@ -12,8 +12,8 @@
 <body>
     <div class="loginbox">
         <form action="@Url.Action("Login", "Usuario")" method="post">
-        <label for="Email">Email</label><input type="text" required="true" name="email" value="" />
-        <label for="password">Password</label><input required="true" type="password" name="password" value="" />
+        <label for="Email">Email</label><input type="text" required="true" minlenght="8" maxlength="20" name="email" value="" />
+        <label for="password">Password</label><input required="true" type="password"  minlenght="8" maxlength="20" name="password" value="" />
         <input type="submit" name="login" value="Ingresar" />
         </form>
     </div>
