@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1402.2112\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
@@ -49,6 +52,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\web.data\web.data.csproj">
+      <Project>{EAED99B2-FAE9-4ECB-A93A-8DD9A3B01019}</Project>
+      <Name>web.data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\web.model\web.model.csproj">
+      <Project>{E0DBB9C8-2EB8-4707-8850-741BEFA9A7BE}</Project>
+      <Name>web.model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\web.services\web.services.csproj">
+      <Project>{3C197C70-D0BE-456A-9B93-E50C8D1DE56D}</Project>
+      <Name>web.services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

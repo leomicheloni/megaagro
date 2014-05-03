@@ -15,14 +15,30 @@ namespace web.services
             return new LoginResult { Success = false, Description = "Wrong user" }; // TODO: ver cuánta información se le da al usuario que intenta logearse
         }
 
-        internal static LoginResult WrongPassword()
+        public static LoginResult WrongPassword()
         {
             return new LoginResult { Success = false, Description = "Wrong user or password" };
         }
 
-        internal static LoginResult Ok()
+        public static LoginResult Ok()
         {
             return new LoginResult { Success = true, Description = "" };
+        }
+
+        public override bool Equals(object obj)
+        {
+            var other = (LoginResult)obj;
+            return other.Description.Equals(this.Description) && other.Success == this.Success;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Success.GetHashCode() ^ this.Description.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("sucess: {0} => {1}", this.Success, this.Description);
         }
     }
 }
